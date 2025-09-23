@@ -1,7 +1,10 @@
 name: App Runner
 
 on:
-  pull_request:
+  push:        # запуск при пуше
+    branches:
+      - main
+  pull_request:  # запуск при PR
     branches:
       - main
 
