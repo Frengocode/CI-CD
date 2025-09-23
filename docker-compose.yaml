@@ -1,14 +1,12 @@
 services:
   app:
-    build: ./
+    build: .
     container_name: app
     ports:
       - "8000:8000"
 
-  
   test:
-    build: ./
+    build: .
     depends_on:
       - app
-    container_name: test
     command: pytest -v
