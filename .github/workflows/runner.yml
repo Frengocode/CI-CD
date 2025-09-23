@@ -23,5 +23,6 @@ jobs:
       - name: Start services and run tests
         run: |
           docker compose up -d
-          docker compose run --rm app pytest
+          docker exec app pytest -v
           docker compose down
+

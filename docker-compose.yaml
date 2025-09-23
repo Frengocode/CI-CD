@@ -1,5 +1,3 @@
-version: '8'
-
 services:
   app:
     build: ./
