@@ -4,3 +4,10 @@ services:
     container_name: app
     ports:
       - "8000:8000"
+
+  
+  tests:
+    depends_on:
+      - app
+    container_name: tests
+    command: pytest -v
