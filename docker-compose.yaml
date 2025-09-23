@@ -6,8 +6,8 @@ services:
       - "8000:8000"
 
   
-  tests:
+  test:
     depends_on:
       - app
-    container_name: tests
+    container_name: test
     command: pytest -v
