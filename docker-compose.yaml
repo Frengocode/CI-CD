@@ -11,4 +11,4 @@ services:
       - .:/app
     depends_on:
       - app
-    command: pytest -v -s tests/
+    command: pytest -v -s tests.py
