@@ -9,4 +9,4 @@ services:
     build: .
     depends_on:
       - app
-    command: pytest -v
+    command: pytest -v --disable-warnings -s
