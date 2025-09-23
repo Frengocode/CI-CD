@@ -1,0 +1,24 @@
+name: App Runner
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.12"
+
+      - name: Start services and run tests
+        run: |
+          docker compose up -d
+          docker compose run --rm app pytest
+          docker compose down
