@@ -7,6 +7,7 @@ import logging
 logging.basicConfig(level=logging.DEBUG)
 log = logging.getLogger(__name__)
 
+
 @pytest.mark.asyncio
 async def test_get_hello() -> None:
     async with aiohttp.ClientSession() as client:

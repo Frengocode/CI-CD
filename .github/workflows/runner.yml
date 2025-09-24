@@ -25,3 +25,21 @@ jobs:
           docker compose up --build -d app
           docker compose run --rm test
           docker compose down --volumes --remove-orphans
+    
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Start application
+        uses: actions/checkout@v3
+
+      - name:  Setup the python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.12"
+
+      - name: Start the app
+        run: |
+          docker compose up -d
+          docker compose run --rm runner
+          docker compose down --volumes
+

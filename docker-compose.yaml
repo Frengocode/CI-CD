@@ -12,3 +12,11 @@ services:
     depends_on:
       - app
     command: pytest -v -s tests.py
+
+
+  runner:
+    depends_on:
+      - app
+    build: ./
+    container_name: runner
+    
